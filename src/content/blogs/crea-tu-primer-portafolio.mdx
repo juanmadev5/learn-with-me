@@ -20,9 +20,15 @@ Por eso aqui vas a aprender a hacer un portafolio, completamente básico usando 
 HTML (HiperText Markup Language) o Lenguage de Marcado de HiperTexto es como lo dice un Lenguage de Marcado con el cual vas a ir definiendo la estructura de la pagina web, es como el esqueleto
 se usan etiquetas que van entre "\<\>", uno de ellos es:
 
-````html
-    <h1>Esto es un título</h1>
-````
+<div className="w-full flex items-center justify-center">
+  <div className="max-md:w-[360px] lg:w-full">
+    ````html
+         <h1>Esto es un título</h1>
+    ````
+  </div>
+</div>
+
+
 
 La etiqueta h1 sirve para los títulos, pero esto es solo uno de las varias etiquetas que existen
 
@@ -35,17 +41,22 @@ Un sitio web tiene tres etiquetas clave que son `html`, `head`, y `body`
 
 En el ´html´ va todo el sitio web, desde ahi se empieza, luego ´head´ y ´body´ van uno abajo de otro respectivamente
 
-````html
-<html>
-    <head>
+<div className="w-full flex items-center justify-center">
+  <div className="max-md:w-[360px] lg:w-full">
+    ````html
+        <html>
+            <head>
 
-    </head>
+            </head>
 
-    <body>
+            <body>
 
-    </body>
-</html>
-````
+            </body>
+        </html>
+    ````
+  </div>
+</div>
+
 
 En el `head` se colocan detalles clave de la página como el título y otra descripciones, también es el lugar donde se hacer referencia al archivo de estilos de la página, pero para este ejemplo 
 usaremos solo estilos en línea, ya veras como
@@ -54,28 +65,39 @@ En el ´body´ va todo el cuerpo de la página, el título principal, textos, im
 
 Una estructura basicamente definida sería asi
 
-````html
-<html>
-    <head>
-        <title>Mi portafolio</title>
+<div className="w-full flex items-center justify-center">
+  <div className="max-md:w-[360px] lg:w-full">
+    ````html
+        <html>
+            <head>
+                <title>Mi portafolio</title>
 
-        <styles>
+                <styles>
 
-        </styles>
-    </head>
+                </styles>
+            </head>
 
-    <body>
-        <h1>JM Dev</h1>
-    </body>
-    
-</html>
-````
+            <body>
+                <h1>JM Dev</h1>
+            </body>
+            
+        </html>
+    ````
+  </div>
+</div>
+
+
 
 Y ves la etiqueta de `styles`, bueno eso es hacer estilos en línea o bueno no tanto así, en realidad un estilo en línea se ve asi:
 
-````html
-<h1 style="font-size: 48px;">JM Dev</h1>
-````
+<div className="w-full flex items-center justify-center">
+  <div className="max-md:w-[360px] lg:w-full">
+    ````html
+        <h1 style="font-size: 48px;">JM Dev</h1>
+    ````
+  </div>
+</div>
+
 Pero de todos modos la mayoría lo llama asi.
 
 ---
@@ -86,59 +108,63 @@ Ahora que tienes una estructura básica, vamos a mejorarla agregando algunos est
 
 En lugar de usar estilos en línea (que son útiles pero limitados), colocaremos los estilos dentro de la etiqueta `<style>` para mantener el código más organizado.
 
-````html
-<html>
-    <head>
-        <title>Mi portafolio</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f9;
-                color: #333;
-                text-align: center;
-            }
-            h1 {
-                font-size: 48px;
-                margin-top: 50px;
-                color: #5a67d8;
-            }
-            p {
-                font-size: 18px;
-                margin: 20px;
-            }
-            .proyectos {
-                margin-top: 30px;
-            }
-            .proyecto {
-                background: white;
-                margin: 10px auto;
-                padding: 15px;
-                max-width: 300px;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
-        </style>
-    </head>
+<div className="w-full flex items-center justify-center">
+  <div className="max-md:w-[360px] lg:w-full">
+    ````html
+        <html>
+            <head>
+                <title>Mi portafolio</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        background-color: #f4f4f9;
+                        color: #333;
+                        text-align: center;
+                    }
+                    h1 {
+                        font-size: 48px;
+                        margin-top: 50px;
+                        color: #5a67d8;
+                    }
+                    p {
+                        font-size: 18px;
+                        margin: 20px;
+                    }
+                    .proyectos {
+                        margin-top: 30px;
+                    }
+                    .proyecto {
+                        background: white;
+                        margin: 10px auto;
+                        padding: 15px;
+                        max-width: 300px;
+                        border: 1px solid #ccc;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                    }
+                </style>
+            </head>
 
-    <body>
-        <h1>JM Dev</h1>
-        <p>Bienvenido a mi portafolio. Aquí puedes ver algunos de mis proyectos destacados.</p>
-        <div class="proyectos">
-            <div class="proyecto">
-                <h2>Proyecto 1</h2>
-                <p>Descripción breve del proyecto.</p>
-            </div>
-            <div class="proyecto">
-                <h2>Proyecto 2</h2>
-                <p>Descripción breve del proyecto.</p>
-            </div>
-        </div>
-    </body>
-</html>
-````
+            <body>
+                <h1>JM Dev</h1>
+                <p>Bienvenido a mi portafolio. Aquí puedes ver algunos de mis proyectos destacados.</p>
+                <div class="proyectos">
+                    <div class="proyecto">
+                        <h2>Proyecto 1</h2>
+                        <p>Descripción breve del proyecto.</p>
+                    </div>
+                    <div class="proyecto">
+                        <h2>Proyecto 2</h2>
+                        <p>Descripción breve del proyecto.</p>
+                    </div>
+                </div>
+            </body>
+        </html>
+    ````
+  </div>
+</div>
 
 ## Qué hace este código?
 
