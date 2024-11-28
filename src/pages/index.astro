@@ -24,7 +24,7 @@ const blogs = (await getCollection("blogs")).sort((a, b) => {
     </h2>
     <p class="text-center mx-2">{strings.myExperience}.</p>
     <p
-      class="m-4 text-xl font-semibold bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent"
+      class="m-4 mt-12 text-xl font-semibold bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent"
     >
       {strings.articles}
     </p>
@@ -34,7 +34,7 @@ const blogs = (await getCollection("blogs")).sort((a, b) => {
       {
         blogs.map((blog) => {
           const { slug, data } = blog;
-          const { title, img, author, date, readtime } = data;
+          const { title, img, date, readtime } = data;
           return (
             <article class="flex p-2 mt-2 items-center bg-green-100/20 border rounded-xl max-md:w-full w-96">
               <a href={`/blog/${slug}`}>
