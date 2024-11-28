@@ -17,7 +17,7 @@ const { title, author, img, date, time, readtime, metaDescription } = data;
 const { Content } = await render(blog);
 ---
 
-<head>
+<head role="contentinfo">
   <head>
     <title>{`${title} - LearnWithMe`}</title>
     <meta name="description" content={metaDescription} />
