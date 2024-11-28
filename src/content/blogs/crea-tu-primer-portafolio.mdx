@@ -1,0 +1,164 @@
+---
+title: Crea tu primer portafolio
+date: 28 de noviembre de 2024
+dateToParse: "2024-11-28"
+time: "14:00"
+img: https://s3-cdn.cmlabs.co/page/2023/10/04/web-developer-definition-skills-and-responsibilities-908401.png
+author: JM Dev
+readtime: 3
+metaDescription: Aprende a crear tu portafolio web paso a paso usando HTML y CSS.
+keywords: "portafolio, html, css, web, programación"
+---
+
+Cuando quieres buscar algún empleo como programador lo más seguro es que los reclutadores quieran ver tu portafolio donde expones los proyectos que realizaste,
+es algo que te da una ayuda muy grande y te puede ayudar a pasar el primer filtro de los reclutadores para que estés en la lista de las personas a las cuales se les va hacer la entrevista.
+
+Por eso aqui vas a aprender a hacer un portafolio, completamente básico usando HTML y CSS.
+
+## Qué es HTML y qué es CSS?
+
+HTML (HiperText Markup Language) o Lenguage de Marcado de HiperTexto es como lo dice un Lenguage de Marcado con el cual vas a ir definiendo la estructura de la pagina web, es como el esqueleto
+se usan etiquetas que van entre "\<\>", uno de ellos es:
+
+````html
+    <h1>Esto es un título</h1>
+````
+
+La etiqueta h1 sirve para los títulos, pero esto es solo uno de las varias etiquetas que existen
+
+En su parte CSS (Cascade Style Sheet) u Hoja de Estilos en Cascada es el archivo con el cual le damos estilo a nuestro sitio web, colores, tamaños de fuentes, orden, etc. Tiene muchas
+cosas para hacer en el HTMl incluso animaciones.
+
+## Creando una estructura básica
+
+Un sitio web tiene tres etiquetas clave que son `html`, `head`, y `body`
+
+En el ´html´ va todo el sitio web, desde ahi se empieza, luego ´head´ y ´body´ van uno abajo de otro respectivamente
+
+````html
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+    </body>
+</html>
+````
+
+En el `head` se colocan detalles clave de la página como el título y otra descripciones, también es el lugar donde se hacer referencia al archivo de estilos de la página, pero para este ejemplo 
+usaremos solo estilos en línea, ya veras como
+
+En el ´body´ va todo el cuerpo de la página, el título principal, textos, imagenes, etc.
+
+Una estructura basicamente definida sería asi
+
+````html
+<html>
+    <head>
+        <title>Mi portafolio</title>
+
+        <styles>
+
+        </styles>
+    </head>
+
+    <body>
+        <h1>JM Dev</h1>
+    </body>
+    
+</html>
+````
+
+Y ves la etiqueta de `styles`, bueno eso es hacer estilos en línea o bueno no tanto así, en realidad un estilo en línea se ve asi:
+
+````html
+<h1 style="font-size: 48px;">JM Dev</h1>
+````
+Pero de todos modos la mayoría lo llama asi.
+
+---
+
+## Añadiendo estilo a tu portafolio
+
+Ahora que tienes una estructura básica, vamos a mejorarla agregando algunos estilos para que tu portafolio sea más atractivo. 
+
+En lugar de usar estilos en línea (que son útiles pero limitados), colocaremos los estilos dentro de la etiqueta `<style>` para mantener el código más organizado.
+
+````html
+<html>
+    <head>
+        <title>Mi portafolio</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f9;
+                color: #333;
+                text-align: center;
+            }
+            h1 {
+                font-size: 48px;
+                margin-top: 50px;
+                color: #5a67d8;
+            }
+            p {
+                font-size: 18px;
+                margin: 20px;
+            }
+            .proyectos {
+                margin-top: 30px;
+            }
+            .proyecto {
+                background: white;
+                margin: 10px auto;
+                padding: 15px;
+                max-width: 300px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>JM Dev</h1>
+        <p>Bienvenido a mi portafolio. Aquí puedes ver algunos de mis proyectos destacados.</p>
+        <div class="proyectos">
+            <div class="proyecto">
+                <h2>Proyecto 1</h2>
+                <p>Descripción breve del proyecto.</p>
+            </div>
+            <div class="proyecto">
+                <h2>Proyecto 2</h2>
+                <p>Descripción breve del proyecto.</p>
+            </div>
+        </div>
+    </body>
+</html>
+````
+
+## Qué hace este código?
+
+1. **Estilos básicos**: En el bloque `<style>`, se define cómo se verá el cuerpo de la página, los títulos, párrafos y otros elementos. Por ejemplo, el `background-color` del cuerpo da un color de fondo, y el `text-align: center` centra el contenido.
+
+2. **Sección de proyectos**: Cada proyecto se muestra dentro de un contenedor `.proyecto` que tiene un diseño limpio con bordes redondeados y una sombra ligera.
+
+3. **Flexibilidad**: Todo está diseñado para ser fácil de entender y escalar. Puedes agregar más proyectos copiando y pegando las secciones dentro de `<div class="proyectos">`.
+
+## Próximos pasos
+
+Este es solo el inicio de tu portafolio. A medida que aprendas más sobre desarrollo web, puedes:
+- Usar **CSS externo** para separar los estilos en un archivo `.css`.
+- Incorporar **JavaScript** para agregar interactividad.
+- Hacer que tu portafolio sea **responsive** (adaptable a móviles) usando media queries de CSS o frameworks como Bootstrap.
+
+¡Empieza con este diseño básico y ve mejorándolo! Un portafolio bien hecho es clave para destacarte como programador. 🎉
+
+Si tienes dudas o quieres que hablemos de otro tema, ¡déjame un comentario! 🚀
+
+--- 
+
+Espero que esta continuación te sirva para completar el post. Si necesitas ayuda adicional, no dudes en pedirla. 😊
