@@ -48,8 +48,14 @@ const blogs = (await getCollection("blogs")).sort((a, b) => {
 
               <div class="flex flex-col m-2">
                 <h2>{title}</h2>
-                <p class="text-xs mt-2 opacity-65">🕒 {readtime} min</p>
-                <p class="text-xs mt-2 opacity-65">📅 {date}</p>
+                <div class="flex flex-row items-center mt-1 gap-1">
+                    <p>🕒</p>
+                    <p class="text-xs opacity-65">{readtime} min</p>
+                </div>
+                <div class="flex flex-row items-center mt-1 gap-1">
+                    <p>📅</p>
+                    <p class="text-xs opacity-65">{date}</p>
+                </div>
               </div>
             </article>
           );
