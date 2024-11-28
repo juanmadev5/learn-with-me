@@ -39,7 +39,7 @@ const blogs = (await getCollection("blogs")).sort((a, b) => {
             <article class="flex p-2 mt-2 items-center bg-green-100/20 border rounded-xl max-md:w-full w-96">
               <a href={`/blog/${slug}`}>
                 <img
-                  class="w-48 rounded-lg hover:opacity-70 transition-all"
+                  class="w-40 h-32 rounded-lg hover:opacity-70 transition-all object-cover"
                   transition:name={`img-${slug}`}
                   src={img}
                   alt={title}
