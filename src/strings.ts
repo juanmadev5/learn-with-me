@@ -1,6 +1,7 @@
 export const metaDescriptions = {
   mainMetaDesc:
     "Aprende desarrollo web, Android, y Flutter con tutoriales gratuitos y paso a paso para principiantes y expertos.",
+    mainKeywords: "blog programación, programación, código, android, flutter, web"
 };
 
 export const strings = {

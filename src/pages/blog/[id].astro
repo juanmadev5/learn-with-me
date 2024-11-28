@@ -13,16 +13,21 @@ export async function getStaticPaths() {
 
 const { blog } = Astro.props;
 const { data, slug } = blog;
-const { title, author, img, date, time, readtime, metaDescription } = data;
+const { title, author, img, date, time, readtime, metaDescription, keywords } =
+  data;
 const { Content } = await render(blog);
 ---
 
 <head role="contentinfo">
-  <head>
-    <title>{`${title} - LearnWithMe`}</title>
-    <meta name="description" content={metaDescription} />
-  </head>
+  <title>{`${title} - LearnWithMe`}</title>
+  <meta name="description" content={metaDescription} />
+  <meta name="keywords" content={keywords} />
+  <link
+    rel="canonical"
+    href={`https://learn-with-me-beta.vercel.app/blog/${slug}`}
+  />
 </head>
+
 <Layout title={`LearnWithMe - ${title}`}>
   <TopBar />
   <div class="flex flex-col items-center m-8">

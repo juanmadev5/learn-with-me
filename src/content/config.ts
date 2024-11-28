@@ -9,7 +9,8 @@ const blogs = defineCollection({
         img: z.string(),
         author: z.string(),
         readtime: z.number(),
-        metaDescription: z.string()
+        metaDescription: z.string(),
+        keywords: z.string()
     })
 })
 
