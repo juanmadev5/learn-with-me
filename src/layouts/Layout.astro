@@ -1,0 +1,35 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { metaDescriptions } from "../strings";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      href="https://img.icons8.com/external-flat-vol-2-vectorslab/68/external-Web-Landscape-web-marketing-flat-vol-2-vectorslab.png"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={metaDescriptions.mainMetaDesc} />
+    <title>LearnWithMe - Inicio</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class="xl:mx-96 h-full">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Montserrat-Regular";
+    src: url("/fonts/Montserrat-Regular.ttf");
+  }
+  body {
+    font-family: "Montserrat-Regular";
+    @apply antialiased;
+    height: 100vh;
+  }
+</style>

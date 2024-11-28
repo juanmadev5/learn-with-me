@@ -1,0 +1,112 @@
+
+---
+
+# How to Create a Blog Post Using MDX
+
+## Required Fields (Headers)
+- **date**: This is displayed on the website. The `dateToParse` attribute is used by the system to sort the content, showing the most recent first.
+- **image**: It is recommended to use an external image link (URL) for better performance and accessibility.
+- **time**: The format should be `HH:MM` (24-hour format).
+- **metaDescription**: Add a clear and concise meta description that accurately describes what your blog is about. This is critical for SEO and helps ensure your blog is discoverable by people interested in the topic.
+
+Example header (it need to be on the top of the MDX):
+
+```md
+---
+title: Your Blog Title
+date: 27 de noviembre de 2024
+dateToParse: "2024-11-27"
+time: "11:00"
+img: https://your-image-url.com/image.png
+author: Your Name
+readtime: 2
+metaDescription: A brief description of what your blog is about, highlighting key points and keywords.
+---
+```
+
+---
+
+## How to Insert Images
+
+For responsive image rendering, use **Tailwind CSS** to style images. The following example ensures your image is **288x288 px** and maintains responsive behavior:
+
+```html
+<img src="/android-studio-home.png" alt="Introducción a Android" class="w-72 h-72 mx-auto my-4" />
+```
+
+This example uses the `w-72` (18rem) and `h-72` (18rem) Tailwind classes to size the image and ensures it's centered with `mx-auto` and spaced out with `my-4`.
+
+---
+
+## How to Format Code Snippets
+
+Use the following wrapper around your code snippets to ensure responsive rendering on all device sizes. This container avoids breaking the layout on medium and small screens.
+
+<div className="w-full flex items-center justify-center">
+  <div className="max-md:w-[360px] lg:w-full">
+        ```kotlin
+            package com.tu_nombre.miprimeraapp
+
+            import android.os.Bundle
+            import androidx.activity.ComponentActivity
+            import androidx.activity.compose.setContent
+            import androidx.compose.material3.MaterialTheme
+            import androidx.compose.material3.Surface
+            import androidx.compose.material3.Text
+            import com.tu_nombre.miprimeraapp.ui.theme.MiPrimeraAppTheme
+
+            class MainActivity : ComponentActivity() {
+                override fun onCreate(savedInstanceState: Bundle?) {
+                    super.onCreate(savedInstanceState)
+                    setContent {
+                        MiPrimeraAppTheme {
+                            // Una superficie de Material Design para el contenido
+                            Surface(
+                                color = MaterialTheme.colorScheme.background
+                            ) {
+                                Greeting("Android")
+                            }
+                        }
+                    }
+                }
+            }
+
+            @Composable
+            fun Greeting(name: String) {
+                Text(text = "¡Hola, $name!")
+            }
+        ```
+  </div>
+</div>
+
+This code uses Tailwind's `w-full` and `max-md:w-[360px]` for responsive layouts, ensuring the code block fits well on different screen sizes.
+
+---
+
+## Adding a Text with a Link
+
+For adding links, use markdown syntax to create simple and clear hyperlinks:
+
+```md
+[Visit My Portfolio](https://www.yourportfolio.com)
+```
+
+This will render as a clickable text, guiding users to another page or external resource.
+
+---
+
+### General Tips for Creating MDX Blog Posts:
+
+1. **Be Specific with Meta Descriptions**: Each post should have a unique and descriptive `metaDescription`. This helps with SEO, ensuring your content appears relevant to search engines. Make sure it's clear about what the post will cover and use keywords that match potential search queries.
+
+2. **Use Proper Heading Structure**: Use proper header tags (`h1`, `h2`, `h3`) to structure your content logically. This improves readability for both users and search engines.
+
+3. **Responsive Layouts**: Use Tailwind's responsive classes (`sm:`, `md:`, `lg:`) to make sure your content is mobile-friendly and looks good on any screen.
+
+4. **Internal and External Linking**: Include internal links to other blog posts or pages within your site. Also, use external links when referencing external sources, helping boost SEO and credibility.
+
+5. **Image Optimization**: Always optimize your images for faster load times, and ensure they're properly sized. If you're linking to external images, make sure they are hosted on reliable services.
+
+6. **Use Code Formatting for Readability**: Always make sure your code is formatted correctly with sufficient spacing for readability, especially when teaching programming concepts.
+
+---

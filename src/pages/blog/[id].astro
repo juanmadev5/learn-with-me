@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import TopBar from "../../components/TopBar.astro";
+
+export async function getStaticPaths() {
+  const blogs = await getCollection("blogs");
+  return blogs.map((blog) => ({
+    params: { id: blog.slug },
+    props: { blog },
+  }));
+}
+
+const { blog } = Astro.props;
+const { data, slug } = blog;
+const { title, author, img, date, time, readtime, metaDescription } = data;
+const { Content } = await render(blog);
+---
+
+<head>
+  <head>
+    <title>{`${title} - LearnWithMe`}</title>
+    <meta name="description" content={metaDescription} />
+  </head>
+</head>
+<Layout title={`LearnWithMe - ${title}`}>
+  <TopBar />
+  <a href="/" class="flex items-center ml-6 mb-16">
+    <img class="w-4" src="/arrow-back.svg" />
+    <p class="ml-2">Volver atras</p>
+  </a>
+
+  <div class="flex flex-col items-center m-8">
+    <div class="flex flex-col">
+      <div class="flex flex-col">
+        <img
+          class="w-96 rounded-2xl mb-8 max-md:w-full"
+          src={img}
+          alt={title}
+          transition:name={`img-${slug}`}
+        />
+        <h1
+          class="text-2xl font-semibold bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent mb-4"
+        >
+          {title}
+        </h1>
+        <div class="mb-8 opacity-60">
+          <p>Publicado el: {date}</p>
+          <p>Por: {author}</p>
+          <p>A las: {time} hs</p>
+          <p>Tiempo de lectura: {readtime} minuto(s)</p>
+        </div>
+      </div>
+      <div class="prose mb-6">
+        <Content />
+      </div>
+    </div>
+  </div>
+</Layout>

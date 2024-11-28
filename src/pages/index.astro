@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import TopBar from "../components/TopBar.astro";
+import Footer from "../components/Footer.astro";
+import { strings } from "../strings";
+
+// Descending order (most recent first)
+const blogs = (await getCollection("blogs")).sort((a, b) => {
+  const dateA = new Date(`${a.data.dateToParse}T${a.data.time}:00`);
+  const dateB = new Date(`${b.data.dateToParse}T${b.data.time}:00`);
+
+  return dateB.getTime() - dateA.getTime();
+});
+---
+
+<Layout title="LearnWithMe - Inicio">
+  <TopBar />
+  <section aria-label="Blogs">
+    <h2
+      class="p-8 font-bold text-3xl text-center bg-gradient-to-tr from-green-300 to-green-600 bg-clip-text text-transparent mt-8"
+    >
+      {strings.homeMainDescription}
+    </h2>
+    <p class="text-center mx-2">{strings.myExperience}.</p>
+    <p
+      class="m-4 text-xl font-semibold bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent"
+    >
+      {strings.blogs}
+    </p>
+    <div
+      class="w-full p-2 max-md:border rounded-3xl flex-wrap flex gap-4 justify-center"
+    >
+      {
+        blogs.map((blog) => {
+          const { slug, data } = blog;
+          const { title, img, author, date, readtime } = data;
+          return (
+            <article class="flex p-2 mt-2 items-center bg-green-100/20 border rounded-xl max-md:w-full w-96">
+              <a href={`/blog/${slug}`}>
+                <img
+                  class="w-48 rounded-lg hover:opacity-70 transition-all"
+                  transition:name={`img-${slug}`}
+                  src={img}
+                  alt={title}
+                />
+              </a>
+
+              <div class="flex flex-col m-2">
+                <h2>{title}</h2>
+                <p class="text-xs mt-2 opacity-65">🕒 {readtime} min</p>
+                <p class="text-xs mt-2 opacity-65">📅 {date}</p>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </section>
+  <Footer />
+</Layout>

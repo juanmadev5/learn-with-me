@@ -1,0 +1,47 @@
+---
+// Yes I know, here is some hardcoded things, I will fix it later, now I'm bored to do this
+
+const tech = [
+  "https://img.icons8.com/nolan/50/astro-js.png",
+  "https://img.icons8.com/color/48/tailwind_css.png",
+];
+---
+
+<footer class="w-full flex flex-col items-center">
+  <div
+    class="flex flex-row items-center w-full p-8 max-md:flex-col justify-center lg:gap-6"
+  >
+    <div
+      class="w-72 flex flex-col p-4 bg-green-200/10 border shadow-sm rounded-xl mt-12"
+    >
+      <div class="flex flex-row items-center">
+        <img
+          src="https://avatars.githubusercontent.com/u/115042535?s=400&u=62a596cea79ad50f38ed1e841b021acae7b7b79a&v=4"
+          class="h-10 rounded-xl"
+        />
+        <p class="ml-4 font-semibold">JM Dev</p>
+      </div>
+      <p class="mt-4 text-sm">
+        ¿Quién soy?<br /><br />
+        Soy desarrollador Android y Web front-end, creé este sitio web para compartir
+        un poco mis conocimientos en el mundo de la programación en mis tiempos libres.
+      </p>
+
+      <div class="flex flex-row items-center">
+        <img src="/ic-portfolio.svg" class="size-6 mt-3 mr-2" />
+        <a
+          href="https://juanmadev5.github.io/me/"
+          class="mt-4 text-sm text-green-500">Mi portafolio</a>
+      </div>
+    </div>
+    <img src="/me.svg" class="h-52 max-md:mt-6" />
+  </div>
+  <div class="mt-8 flex flex-row gap-4 mb-6">
+    <p>Con tecnología de</p>
+    <div class="flex items-center space-x-4">
+      {tech.map((icon, index) => (
+        <img src={icon} alt={`Tech ${index}`} class="h-7" />
+      ))}
+    </div>
+  </div>
+</footer>
