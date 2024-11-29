@@ -2,10 +2,11 @@
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import TopBar from "../../components/TopBar.astro";
+import { strings } from "../../strings";
 
 export async function getStaticPaths() {
-  const blogs = await getCollection("blogs");
-  return blogs.map((blog) => ({
+  const article = await getCollection("blogs");
+  return article.map((blog) => ({
     params: { id: blog.slug },
     props: { blog },
   }));
@@ -45,10 +46,10 @@ const { Content } = await render(blog);
           {title}
         </h1>
         <div class="mb-8 opacity-60">
-          <p>Publicado el: {date}</p>
-          <p>Por: {author}</p>
-          <p>A las: {time} hs</p>
-          <p>Tiempo de lectura: {readtime} minuto(s)</p>
+          <p>{strings.publishedDate}{date}</p>
+          <p>{strings.publishedBy}{author}</p>
+          <p>{strings.at}{time} hs</p>
+          <p>{strings.readTime}{readtime}{strings.minutes}</p>
         </div>
       </div>
       <div class="prose mb-6">
